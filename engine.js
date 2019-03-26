@@ -510,3 +510,37 @@ function on_keydown(event)
             break;
     }
 }
+
+function btn_click(str_id)
+{
+    var event = {
+        keyCode:0
+    };
+    
+    switch(str_id){
+        case "btn_top":
+            event.keyCode = 38;
+        break;
+        case "btn_bottom":
+            event.keyCode = 40;
+        break;
+        case "btn_left":
+            event.keyCode = 37;
+        break;
+        case "btn_right":
+            event.keyCode = 39;
+        break;
+        case "btn_space":
+            event.keyCode = 32;
+        break;
+        case "btn_save":
+            event.keyCode = 83;
+        break;
+        case "btn_pause":
+            event.keyCode = 80;
+        break;
+        default:
+        return;
+    }
+    on_keydown(event);
+}
