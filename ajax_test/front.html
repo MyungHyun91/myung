@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<script src="http://code.jquery.com/jquery-1.12.1.js"></script> 
+<script> 
+$(function(){ 
+    $('#id01').on('click',function(){ 
+              alert("데이터 요청!> <");  
+      $.ajax({ 
+           url:'/ajax_test/get_db.jsp?dummy='+new Date().getTime, 
+           type:'get', 
+           success : function(t){ 
+                 $(t).find("person").each(function(){ 
+                           var name = $(this).find('name').text(); 
+                           var age = $(this).find('age').text();
+                           var salary = $(this).find('salary').text();
+                           $('<h1></h1>').text(name+" "+age+" "+salary).appendTo('body'); 
+                  }); 
+            } , 
+            error : function(){ 
+                         alert('실패 ㅠㅠ'); 
+             } 
+      }); 
+    }); 
+
+    $('#id02').on('click',function(){ 
+              alert("데이터 전송~ ^^*"); 
+       $.ajax({ 
+               url:'/ajax_test/set_db.jsp', //가져오고자하는 서버페이지 주소를 넣는다. 
+               type:'post', //데이터를 서버로 전송하게 된다. 
+               data:{ 
+                      name: $('#name1').val(),  //에디터박스의 아이디를 넣으면 해당 에디터박스의 데이터를 보내준다.
+                      age: $('#age1').val(), 
+                      salary: $('#salary1').val() 
+               } , 
+               success : function(t){ 
+                             alert('성공!');
+               } , 
+               error : function(){ 
+                         alert('실패 ㅠㅠ'); 
+               } 
+        });
+    }); 
+}); 
+</script> 
+<meta charset="EUC-KR"> 
+<title>데이터 전송하기</title> 
+</head> 
+<body> 
+<button id="id01"> DB 데이터 보기</button><br/> 
+이름: <input type="text" id="name1" ><br/> 
+나이: <input type="text" id="age1"><br/> 
+월급: <input type="text" id="salary1"><br/> 
+<button id="id02"> DB로 전송</button><br/> 
+
+</body> 
+</html>

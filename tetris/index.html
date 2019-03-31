@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris mini</title>
+    <link rel="stylesheet" href="./engine.css" />
+    <script src="engine.js"></script>
+</head>
+<body onkeydown="on_keydown(event)">
+    <div>
+        <canvas id="cnvTetrisMap" width="220" height="240" style="border:1px solid #c3c3c3;" >
+        Your browser does not support the canvas element.
+        </canvas>
+    </div>
+    <div style="background-color: aquamarine">
+        <input id="btn_top" type="button" value="위" onclick="btn_click('btn_top')">
+        <input id="btn_bottom" type="button" value="아래" onclick="btn_click('btn_bottom')">
+        <input id="btn_left" type="button" value="좌" onclick="btn_click('btn_left')">
+        <input id="btn_right" type="button" value="우" onclick="btn_click('btn_right')">
+        <input id="btn_space" type="button" value="스페이스바" onclick="btn_click('btn_space')">
+        <input id="btn_save" type="button" value="블록저장" onclick="btn_click('btn_save')">
+        <input id="btn_pause" type="button" value="멈추기" onclick="btn_click('btn_pause')">
+    </div>
+</body>
+</html>
