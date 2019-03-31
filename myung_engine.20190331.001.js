@@ -30,7 +30,7 @@ function demo_init()
     imgTile001.src='./image/tile_map001.png';
     
     
-   objInterval = setInterval(start, 100);
+   objInterval = setInterval(start, 10);
 }
 var charX = 0;
 var charY = 0;
