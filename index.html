@@ -4,7 +4,7 @@
 <head>
    <meta name="viewport" content="width=device-width, initial-scale=1, ...">
     <meta charset="utf-8">
-    <title>myung game Demo v1.2</title>
+    <title>myung game Demo v1.3</title>
     <style>
         body {
             margin: 0;
@@ -80,6 +80,9 @@ window.onload = function () {
             deltaX = e.changedTouches[0].clientX - nStartX;
             deltaY = e.changedTouches[0].clientY - nStartY;
             document.getElementById("text_1").value = deltaX;
+            
+            charX = deltaX;
+            charY = deltaY;
         }
         window.ontouchend = function(e){
             if(bStartEvent && !bMoveEvent){
