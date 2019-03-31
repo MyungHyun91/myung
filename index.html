@@ -77,8 +77,8 @@ window.onload = function () {
             }
             bMoveEvent = true;
             var deltaX, deltaY;
-            deltaX = e.changedTouches[0].clientX - clientX;
-            deltaY = e.changedTouches[0].clientY - clientY;
+            deltaX = e.changedTouches[0].clientX - nStartX;
+            deltaY = e.changedTouches[0].clientY - nStartY;
             document.getElementById("text_1").value = deltaX;
         }
         window.ontouchend = function(e){
