@@ -16,57 +16,19 @@
 </head>
 
 <body>
-   
-test2222     tetet
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   abcdefgfdqweqweqweqweqweqweq
-    <div id="container"></div>
-    
-    <script src="myung_engine.20190331.001.js">
-    </script>
-    <!--
-       <script>
-        var width = window.innerWidth;
-        var height = window.innerHeight;
-
-        var stage = new Konva.Stage({
-            container: 'container',
-            width: width,
-            height: height
-        });
-
-        var layer = new Konva.Layer();
-        stage.add(layer);
-
-        var POS_X = 0;
-        var POS_Y = 0;
+    <div id="container">image view
+    <canvas id="canvas" width="220" height="240" style="border:1px solid #c3c3c3;" >
+    Your browser does not support the canvas element.
+    </canvas>
+    </div>
+    <script src="myung_engine.20190331.001.js"></script>
+    <script>
         
-        var canvas = document.createElement('canvas');
-        // use external library to parse and draw gif animation
-        function onDrawFrame(ctx, frame) {
-            // update canvas size
-            canvas.width = frame.width;
-            canvas.height = frame.height;
-            // update canvas that we are using for Konva.Image
-            ctx.drawImage(frame.buffer, POS_X, POS_Y, canvas.width/10, canvas.height/10);
-            // redraw the layer
-            layer.draw();
-        }
+window.onload = function () {
+    demo_init();
+}
 
-        gifler('/image/7LCp.gif')
-            .frames(canvas, onDrawFrame);
-
-        // draw resulted canvas into the stage as Konva.Image
-        var image = new Konva.Image({
-            image: canvas
-        });
-        layer.add(image);
-        
-              window.onkeydown = function(e) {
+ window.onkeydown = function(e) {
                
               switch(e.keyCode) {
 
@@ -96,7 +58,6 @@ test2222     tetet
               }
          }
     </script>
--->
 </body>
 
 </html>
