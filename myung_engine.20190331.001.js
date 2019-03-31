@@ -20,11 +20,11 @@ function demo_init()
     var imgTile001 = new Image();
     
     imgTile001.addEventListener('load', function(){
-        ctx.drawImage(imgTile001, 0, 0);
-        ctx.drawImage(imgTile001, 32, 0);
-        ctx.drawImage(imgTile001, 64, 0);
-        ctx.drawImage(imgTile001, 96, 0);
-        ctx.drawImage(imgTile001, 128, 0);
+        ctx.drawImage(imgTile001, 0, 0, 32, 32);
+        ctx.drawImage(imgTile001, 32, 0, 32, 32);
+        ctx.drawImage(imgTile001, 64, 0, 32, 32);
+        ctx.drawImage(imgTile001, 96, 0, 32, 32);
+        ctx.drawImage(imgTile001, 128, 0, 32, 32);
     },false);
     imgTile001.src='./image/tile_map001.png';
    
@@ -35,9 +35,7 @@ function start()
        // 모바일이면 화면에 조이스틱을 보여라
 //    if(B_MOBILE){
 //        
-//    }
-    
- 
+//    } 
 }
 
 function end()

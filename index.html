@@ -57,6 +57,47 @@ window.onload = function () {
                    break;
               }
          }
+ 
+        var bStartEvent = false;
+        var bMoveEvent = false;
+//        function init()
+//        {
+//            document.addEventListener("touchstart", this.onStart.bind(this), false);
+//            document.addEventListener("touchmove", this.onMove.bind(this), false);
+//            document.addEventListener("touchend", this.onEnd.bind(this), false);
+//        }
+//        function onStart(e) {
+//            bStartEvent = true;
+//        }
+//        function onMove(e){
+//            if(!bStartEvent) {
+//                return;
+//            }
+//            bMoveEvent = true;
+//        }
+//        function onEnd(e){
+//            if(bStartEvent && !bMoveEvent){
+//                alert("Tap!");
+//            }
+//            bStartEvent = false;
+//            bMoveEvent = false;
+//        }
+        window.ontouchstart = function(e){
+            bStartEvent = true;
+        }
+        window.ontouchmove = function(e){
+            if(!bStartEvent) {
+                return;
+            }
+            bMoveEvent = true;
+        }
+        window.ontouchend = function(e){
+            if(bStartEvent && !bMoveEvent){
+                alert("Tap!");
+            }
+            bStartEvent = false;
+            bMoveEvent = false;            
+        }
     </script>
 </body>
 
