@@ -79,7 +79,7 @@ window.onload = function () {
             var deltaX, deltaY;
             deltaX = e.changedTouches[0].clientX - clientX;
             deltaY = e.changedTouches[0].clientY - clientY;
-            document.getElementById("text_1").vale = deltaX;
+            document.getElementById("text_1").value = deltaX;
         }
         window.ontouchend = function(e){
             if(bStartEvent && !bMoveEvent){
