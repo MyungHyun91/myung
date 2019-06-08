@@ -2,99 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <!--<meta name="viewport" content="width=device-width, initial-scale=1, ..."> -->
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-   <meta name="HandheldFriendly" content="true" />
-   
-    <meta charset="utf-8">
-    <title>myung game Demo v1.6</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #F0F0F0;
-        }
-    </style>
 </head>
-
 <body>
-    <div id="container">image view
-    <canvas id="canvas" width="220" height="240" style="border:1px solid #c3c3c3;" >
-    Your browser does not support the canvas element.
-    </canvas>
-    </div>
-    <input type="text" id="text_1" value="text area">
-    <script src="myung_engine.20190331.001.js"></script>
-    <script>
-        
-        
-window.onload = function () {
-    demo_init();
-}
-
- window.onkeydown = function(e) {
-               
-              switch(e.keyCode) {
-
-              case 38:
-
-                   POS_Y -= 3;
-
-                   break;
-
-              case 40:
-
-                   POS_Y += 3;
-
-                   break;
-
-              case 37:
-
-                   POS_X -= 3;
-
-                   break;
-
-              case 39:
-
-                   POS_X += 3;
-
-                   break;
-              }
-         }
- 
-        var bStartEvent = false;
-        var bMoveEvent = false;
-        var nStartX = 0;
-        var nStartY = 0;
-        
-
-        window.ontouchstart = function(e){
-            bStartEvent = true;
-             nStartX = e.touches[0].clientX;
-            nStartY = e.touches[0].clientY;
-        }
-        window.ontouchmove = function(e){
-            if(!bStartEvent) {
-                return;
-            }
-            bMoveEvent = true;
-            var deltaX, deltaY;
-            deltaX = e.changedTouches[0].clientX - nStartX;
-            deltaY = e.changedTouches[0].clientY - nStartY;
-            document.getElementById("text_1").value = deltaX;
-            
-            charX = deltaX;
-            charY = deltaY;
-        }
-        window.ontouchend = function(e){
-            if(bStartEvent && !bMoveEvent){
-                alert("Tap!");
-            }
-            bStartEvent = false;
-            bMoveEvent = false;            
-        }
-    </script>
+<script>
+    // 원하는 html 설정
+    window.location = "./tetris/index.html";
+</script>
 </body>
-
 </html>
