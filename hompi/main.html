@@ -81,6 +81,14 @@
         .scale:hover {
           transform: scale(1.2);
         }
+        
+        #middle_child {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width:100%;
+            height: 100%;
+        }
        
     </style>
 </head>
@@ -90,14 +98,15 @@
         <div id="top">
             <div id="menu">
                 <ul>
-                    <li><a id="menu1" href="/screen/calendar.html">CALENDAR</a></li>
-                    <li><a id="menu2" href="http://localhost:3000/login">DIARY</a></li>
-                    <li><a id="menu3" href="/tetris/index.html">TETRIS</a></li>
-                    <li><a id="menu4" href="/screen/join.html">JOIN</a></li>
+                    <li><a id="menu1" class="menu_bar" href="/calendar/calendar_new2.html">CALENDAR</a></li>
+                    <li><a id="menu2" class="menu_bar" href="http://localhost:3000/login">DIARY</a></li>
+                    <li><a id="menu3" class="menu_bar" href="/tetris/index.html">TETRIS</a></li>
+                    <li><a id="menu4" class="menu_bar" href="/screen/join.html">JOIN</a></li>
                 </ul>        
             </div>
         </div>
         <div id="middle">
+                <div id="middle_child"></div>
         </div>
         <div id="bottom">
         </div>
@@ -105,6 +114,22 @@
     <script src="jquery_3.3.1/jquery.min.js"></script>
     <script>
     
+         $(document).ready(function(){
+               
+            $('.menu_bar').mouseover(function(event){
+                $('#highlight_bar').stop().animate({
+                   left: event.target.offsetLeft,
+                   width: event.target.offsetWidth
+                });
+            });
+//             $(document).on('click', '.menu_bar', function (event) {
+//               // history.pushState(null, null, event.target.href);
+//                 $('#middle_child').load(event.target.href);
+//                 event.preventDefault();
+//              })
+        });
+        
+        
     document.onmouseover = function(e){
         if(e.target == null){e = window.Event;}
         e.preventDefault();
