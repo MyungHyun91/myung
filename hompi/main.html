@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        메인홈피
+    </title>
+    <style>
+        #background-cover {
+            position:absolute;
+            top:0px;
+            left:0px;
+            width: 100%;
+            height: 100%;
+            
+            overflow: hidden;
+            
+        }
+        #background-image {
+            position:absolute;
+            background-image: url("./image/buildings-1851246.jpg");
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #top {
+            position: fixed;
+            top:0px;
+            left: 0px;
+            width:100%;
+            height: 70px;
+            border-bottom: 1px solid rgba(195,195,195,30%);
+        }
+        #menu {
+            position: relative;
+            margin-top: 30px;
+            width: 700px;
+            left: calc(50% - 350px);
+            
+        }
+        ul{
+             margin: 0 auto;
+            list-style: none;
+        }
+        li{
+            float:left;
+            margin-right: 100px;
+        }
+        li a{font-size:1.1em;color:white;font-weight: normal;text-decoration: none;}
+        #middle {
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="background-cover"><div id="background-image"></div></div>
+        <div id="top">
+            <div id="menu">
+                <ul>
+                    <li><a href="/screen/calendar.html">CALENDAR</a></li>
+                    <li><a href="http://localhost:3000/login">DIARY</a></li>
+                    <li><a href="#">HISTORY</a></li>
+                    <li><a href="/screen/join.html">JOIN</a></li>
+                </ul>        
+            </div>
+        </div>
+        <div id="middle">
+        </div>
+        <div id="bottom">
+        </div>
+    </div>
+</body>
+</html>
