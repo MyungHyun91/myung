@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <title>
         메인홈피
     </title>
-    <style>    
+    <style>
+        @FONT-FACE {
+            font-family: 'Lora-Regular';
+            src:url("./font/Lora/Lora-Regular.ttf");
+        }
+    
+        body {
+            background-color: black;
+            font-family: 'Lora-Regular'
+        }
         #background-cover {
             position:absolute;
             top:0px;
@@ -38,8 +48,8 @@
         #menu {
             position: relative;
             margin-top: 30px;
-            width: 700px;
-            left: calc(50% - 350px);
+            width: 710px;
+            left: calc(50% - 355px);
             
         }
         ul{
@@ -59,28 +69,19 @@
             width: calc(100% - 22px);
             height: 3000px;
             background-color: rgba(0,0,0,20%);
-            border: 1px solid rgba(195,195,195,30%);
+/*            border: 1px solid rgba(195,195,195,30%);*/
             z-index: 9;
         }
         
         .scale {
           transform: scale(1);
-          -webkit-transform: scale(1);
-          -moz-transform: scale(1);
-          -ms-transform: scale(1);
-          -o-transform: scale(1);
           transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
         }
+        
         .scale:hover {
           transform: scale(1.2);
-          -webkit-transform: scale(1.2);
-          -moz-transform: scale(1.2);
-          -ms-transform: scale(1.2);
-          -o-transform: scale(1.2);
         }
-        body {
-            background-color: black;
-        }
+       
     </style>
 </head>
 <body>
@@ -89,10 +90,10 @@
         <div id="top">
             <div id="menu">
                 <ul>
-                    <li><a class="scale" href="/screen/calendar.html">CALENDAR</a></li>
-                    <li><a class="scale" href="http://localhost:3000/login">DIARY</a></li>
-                    <li><a class="scale" href="#">HISTORY</a></li>
-                    <li><a class="scale" href="/screen/join.html">JOIN</a></li>
+                    <li><a id="menu1" href="/screen/calendar.html">CALENDAR</a></li>
+                    <li><a id="menu2" href="http://localhost:3000/login">DIARY</a></li>
+                    <li><a id="menu3" href="#">HISTORY</a></li>
+                    <li><a id="menu4" href="/screen/join.html">JOIN</a></li>
                 </ul>        
             </div>
         </div>
@@ -101,16 +102,50 @@
         <div id="bottom">
         </div>
     </div>
-    
+    <script src="jquery_3.3.1/jquery.min.js"></script>
     <script>
+    
     document.onmouseover = function(e){
         if(e.target == null){e = window.Event;}
+        e.preventDefault();
+        switch(e.target.id){
+            case "menu1":
+            case "menu2":
+            case "menu3":
+            case "menu4":
+                if(tmBackImageSize != null){
+                    clearInterval(tmBackImageSize);
+                    tmBackImageSize = null;
+                }
+                var obj = document.getElementById("background-image");
+                obj.style.width = (100 + Math.floor(Math.random() * 5) + 1) + "%";
+                obj.style.height = (100 + Math.floor(Math.random() * 5) + 1) + "%";
+                break;
+        }
         
-        switch(e.targ
-               et.getAttribute("class")){
-            case "scale":
-//                alert("발사");
-                docunent.getElementById("background-image").style.transform = "scale(1.2)";
+    }
+    
+    function InitBackImageSize()
+    {
+        clearInterval(tmBackImageSize);
+        tmBackImageSize = null;
+        document.getElementById("background-image").style.width="100%"; 
+        document.getElementById("background-image").style.height="100%";
+    }
+    var tmBackImageSize = null;
+    document.onmouseout =  function(e){
+        if(e.target == null){e = window.Event;}
+        e.preventDefault();
+        switch(e.target.id){
+            case "menu1":
+            case "menu2":
+            case "menu3":
+            case "menu4":
+                if(tmBackImageSize != null){
+                    clearInterval(tmBackImageSize);
+                    tmBackImageSize = null;
+                }
+                tmBackImageSize = setInterval("InitBackImageSize()", 5000);
                 break;
         }
         
