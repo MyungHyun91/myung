@@ -17,7 +17,7 @@
         }
         #background-image {
             position:absolute;
-            background-image: url("./image/buildings-1851246.jpg");
+            background-image: url("./image/main_dark.jpg");
             background-position: center;
             background-size: cover;
             width: 100%;
@@ -26,12 +26,15 @@
         
         #top {
             position: fixed;
+/*            position: sticky;*/
             top:0px;
             left: 0px;
             width:100%;
             height: 70px;
             border-bottom: 1px solid rgba(195,195,195,30%);
+            z-index: 10;
         }
+        
         #menu {
             position: relative;
             margin-top: 30px;
@@ -48,8 +51,16 @@
             margin-right: 100px;
         }
         li a{font-size:1.1em;color:white;font-weight: normal;text-decoration: none;}
+        
         #middle {
+            position: absolute;
+            left: 10px;
+            top: 0px;
+            width: calc(100% - 22px);
             height: 3000px;
+/*            background-color: rgba(195,195,195,30%);*/
+            border: 1px solid rgba(195,195,195,30%);
+            z-index: 9;
         }
     </style>
 </head>
