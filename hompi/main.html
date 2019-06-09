@@ -4,7 +4,7 @@
     <title>
         메인홈피
     </title>
-    <style>
+    <style>    
         #background-cover {
             position:absolute;
             top:0px;
@@ -15,9 +15,10 @@
             overflow: hidden;
             
         }
+        
         #background-image {
             position:absolute;
-            background-image: url("./image/main_dark.jpg");
+            background-image: url("./image/main_light.jpg");
             background-position: center;
             background-size: cover;
             width: 100%;
@@ -26,7 +27,6 @@
         
         #top {
             position: fixed;
-/*            position: sticky;*/
             top:0px;
             left: 0px;
             width:100%;
@@ -58,22 +58,41 @@
             top: 0px;
             width: calc(100% - 22px);
             height: 3000px;
-/*            background-color: rgba(195,195,195,30%);*/
+            background-color: rgba(0,0,0,20%);
             border: 1px solid rgba(195,195,195,30%);
             z-index: 9;
+        }
+        
+        .scale {
+          transform: scale(1);
+          -webkit-transform: scale(1);
+          -moz-transform: scale(1);
+          -ms-transform: scale(1);
+          -o-transform: scale(1);
+          transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
+        }
+        .scale:hover {
+          transform: scale(1.2);
+          -webkit-transform: scale(1.2);
+          -moz-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+          -o-transform: scale(1.2);
+        }
+        body {
+            background-color: black;
         }
     </style>
 </head>
 <body>
-    <div id="parent">
-        <div id="background-cover"><div id="background-image"></div></div>
+    <div>
+        <div id="background-cover"><div id="background-image" class="scale"></div></div>
         <div id="top">
             <div id="menu">
                 <ul>
-                    <li><a href="/screen/calendar.html">CALENDAR</a></li>
-                    <li><a href="http://localhost:3000/login">DIARY</a></li>
-                    <li><a href="#">HISTORY</a></li>
-                    <li><a href="/screen/join.html">JOIN</a></li>
+                    <li><a class="scale" href="/screen/calendar.html">CALENDAR</a></li>
+                    <li><a class="scale" href="http://localhost:3000/login">DIARY</a></li>
+                    <li><a class="scale" href="#">HISTORY</a></li>
+                    <li><a class="scale" href="/screen/join.html">JOIN</a></li>
                 </ul>        
             </div>
         </div>
@@ -82,5 +101,21 @@
         <div id="bottom">
         </div>
     </div>
+    
+    <script>
+    document.onmouseover = function(e){
+        if(e.target == null){e = window.Event;}
+        
+        switch(e.targ
+               et.getAttribute("class")){
+            case "scale":
+//                alert("발사");
+                docunent.getElementById("background-image").style.transform = "scale(1.2)";
+                break;
+        }
+        
+    }
+        
+    </script>
 </body>
 </html>
