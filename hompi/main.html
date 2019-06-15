@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         메인홈피
     </title>
@@ -64,6 +65,7 @@
         
         #middle {
             position: absolute;
+/*            position: relative;*/
             left: 10px;
             top: 0px;
             width: calc(100% - 22px);
@@ -99,7 +101,7 @@
             <div id="menu">
                 <ul>
                     <li><a id="menu1" class="menu_bar" href="/calendar/calendar_new2.html">CALENDAR</a></li>
-                    <li><a id="menu2" class="menu_bar" href="http://localhost:3000/login">DIARY</a></li>
+                    <li><a id="menu2" class="menu_bar" href="/hompi/page1.html">DIARY</a></li>
                     <li><a id="menu3" class="menu_bar" href="/tetris/index.html">TETRIS</a></li>
                     <li><a id="menu4" class="menu_bar" href="/screen/join.html">JOIN</a></li>
                 </ul>        
@@ -122,11 +124,11 @@
                    width: event.target.offsetWidth
                 });
             });
-//             $(document).on('click', '.menu_bar', function (event) {
-//               // history.pushState(null, null, event.target.href);
-//                 $('#middle_child').load(event.target.href);
-//                 event.preventDefault();
-//              })
+             $(document).on('click', '.menu_bar', function (event) {
+               // history.pushState(null, null, event.target.href);
+                 $('#middle_child').load(event.target.href);
+                 event.preventDefault();
+              })
         });
         
         
