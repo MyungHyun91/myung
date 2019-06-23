@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+        #o1 {
+            position: relative;
+            width:100%;
+            height: 100%;
+        }
+        .calendar_row{
+          position: relative;
+            width:100%;
+            height: 100px;
+            background-color: aquamarine;      
+        }
+        .d1{
+            position: relative;
+            width:calc(100% / 7);
+            height: 100%;
+            background-color: bisque;
+            float: left;
+            border: 1px solid gray;
+            box-sizing: border-box;
+        }
+        .d2{
+            position: static;
+            width:100%;
+            height: 20%;
+            background-color: aqua;
+            float: left;
+            border: 1px solid gray;
+            box-sizing: border-box;
+            pointer-events:  none;
+        }
+        .d3{
+            position: static;
+            width:100%;
+            height: calc(100% - 20px);
+            background-color: seashell;
+            float: left;
+            border: 1px solid gray;
+            box-sizing: border-box;
+            pointer-events:  none;
+        }
+        .btn {
+            position: absolute;
+            background-color: gold;   
+            width:0px;
+            top:20px;
+            display: block;
+            text-overflow: hidden;
+            white-space: nowrap;
+            word-wrap: break-word;
+            overflow:hidden;  
+            height: 15px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div id="o1">
+        <div class="calendar_row">
+            <div id="btn0" class="btn"></div>
+            <div class="d1" cnt="0">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="1">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="2">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="3">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="4">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="5">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="6">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+        </div>
+        <div class="calendar_row">
+            <div id="btn1" class="btn"></div>
+            <div class="d1" cnt="7">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="8">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="9">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="10">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="11">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="12">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="13">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+        </div><div class="calendar_row">
+            <div id="btn2" class="btn"></div>
+            <div class="d1" cnt="14">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="15">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="16">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="17">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="18">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="19">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="20">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+        </div><div class="calendar_row">
+            <div id="btn3" class="btn"></div>
+            <div class="d1" cnt="21">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="22">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="23">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="24">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="25">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="26">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="27">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+        </div><div class="calendar_row">
+            <div id="btn4" class="btn"></div>
+            <div class="d1" cnt="28">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="29">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="30">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="31">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="32">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="33">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="34">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+        </div>
+        </div><div class="calendar_row">
+            <div id="btn5" class="btn"></div>
+            <div class="d1" cnt="35">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="36">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="37">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="38">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="39">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="40">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+            <div class="d1" cnt="41">
+                <div class="d2">1</div><div class="d3">몸통</div>
+            </div>
+        </div>
+    
+       <script type="text/javascript" src="./jquery_3.3.1/jquery.min.js"></script>
+<script>
+    
+    var g_down = 0;
+    
+    window.onmousedown = function(e)
+    {
+        e = e || window.event;
+        e.preventDefault();
+        
+        // cell 에서 이벤트발생하거나
+        
+        // 지렁이 마디에서 이벤트 발생하거나 
+        
+        switch(e.target.getAttribute("class")){
+            case "d1": // 달력 마우스 클릭시                
+            case "d2":
+            case "d3":
+                g_down = e.target.getAttribute("cnt");
+                
+                earthwormDown(e);
+                break;            
+            default:
+                break;
+        }
+    }
+    
+    var g_tag = null;
+    var g_width = 0;
+    
+    // 달력 마우스 클릭시
+    function earthwormDown(e)
+    {   
+        e = e || window.event;
+        e.preventDefault();
+
+        var a_over = e.target.getAttribute("cnt");
+        var nWidth = 100/7;
+        g_width = nWidth;
+        
+        for(var i=0; i<6; i++){
+            var obj = document.getElementById("btn" + i); 
+            
+            if( i == parseInt(a_over/7, 10) ){
+                obj.style.left = (parseInt(a_over, 10)%7*nWidth) + "%";
+                obj.style.width = nWidth + "%";
+               }
+            else{
+                obj.style.left = "0px";
+                obj.style.width = "0px";
+            }
+        }
+        document.onmouseup = earthwormUp;
+        document.onmouseover = earthwormOver;
+    }
+    
+    function earthwormOver(e)
+    {   
+        var a_over = e.target.getAttribute("cnt");  
+        if(e.target.getAttribute("class") == "d1" || e.target.getAttribute("class") == "d2"){
+             drawEarthworm(g_down, a_over);   
+        }
+    } 
+    
+    function earthwormUp(e)
+    {
+        document.onmouseup = null;
+        document.onmouseover = null;
+    }
+    
+    // 층별로 계산하자
+    function drawEarthworm(dayDown, dayOver)
+    {
+        var nDown = parseInt(dayDown/7, 10);
+        var nOver = parseInt(dayOver/7, 10);
+        var nDownMin =  parseInt(dayDown%7, 10);
+        var nOverMin =  parseInt(dayOver%7, 10);
+        
+        var nPercent = 100/7;
+        
+        if(nDown > nOver){ // 다운이 오버보다 날짜가 클 때
+            
+            for(var i=0; i<6; i++){
+                var obj = document.getElementById("btn" + (i) );
+                
+                 if(i == nDown){ // 시작점 계산
+                    obj.style.left =  "0%";
+                    obj.style.width = (nDownMin + 1) * nPercent  + "%";
+                 }
+                else if(i == nOver){ // 현재 마우스 위치까지 계산
+                    obj.style.left = (nOverMin) * nPercent + "%";
+                    obj.style.width = (7- nOverMin) * nPercent + "%";
+                }
+                else if(i < nDown && i > nOver) { // 범위 안에 해당된다
+                    obj.style.left = "0%";
+                    obj.style.width = "100%";
+                }
+                else { // 범위에 해당되지 않는다
+                    obj.style.left = "0%";
+                    obj.style.width = "0%";
+                }
+            }            
+        }        
+        else if(nDown < nOver){
+            
+            for(var i=0; i<6; i++){
+                var obj = document.getElementById("btn" + (i) );
+                
+                if(i == nDown){ // 시작점 계산
+                    obj.style.left = (nDownMin) * nPercent + "%";
+                    obj.style.width = (7-nDownMin) * nPercent + "%";
+                }
+                else if(i == nOver){ // 현재 마우스 위치까지 계산
+                    obj.style.left = "0%";
+                    obj.style.width = (nOverMin +1) * nPercent + "%";
+                }
+                else if(i > nDown && i < nOver) { // 범위 안에 해당된다
+                    obj.style.left = "0%";
+                    obj.style.width = (7) * nPercent + "%";
+                }
+                else { // 범위에 해당되지 않는다
+                    obj.style.left = "0%";
+                    obj.style.width = "0%";
+                }
+            }
+            
+        }
+        
+        else if(nDown == nOver){
+            
+            for(var i=0; i<6; i++){
+                var obj = document.getElementById("btn" + (i) );
+                
+                 if(i == nDown){ // 시작점 계산
+                    
+                     if(nDownMin > nOverMin){ // 시작점이 더 큰경우
+                         obj.style.left = (nOverMin) * nPercent + "%";
+                    obj.style.width = (nDownMin - nOverMin + 1)*nPercent + "%";
+                     }
+                     else if(nDownMin < nOverMin){ // 시작점이 작은경우
+                         obj.style.left = (nDownMin) * nPercent + "%";
+                    obj.style.width = (nOverMin -nDownMin +1)* nPercent + "%";
+                     }
+                     else if(nDownMin == nOverMin){ // 같은경운 기본값
+                     
+                         obj.style.left = (nDownMin) * nPercent + "%";
+                    obj.style.width = nPercent + "%";
+                     }
+                     else{ // 이상한 값이다
+                        return;    
+                     }
+                     
+                 }
+                else { // 범위에 해당되지 않는다
+                    obj.style.left = "0%";
+                    obj.style.width = "0%";
+                }
+            }
+        }
+        else {
+            // 이상한 값 들어온거
+            return;
+        }
+ 
+    }
+    
+    
+</script>    
+ 
+</body>
+    
+</html>

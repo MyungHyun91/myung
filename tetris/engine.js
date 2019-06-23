@@ -213,7 +213,7 @@ function run() {
     draw_background();
     draw_block(ARR_USER_BLOCK_);
     
-    objInterval = setInterval(run, 20);
+    objInterval = setInterval(run, 10);
 }
 
 function update_arr_map() 
