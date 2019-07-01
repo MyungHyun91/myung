@@ -1,0 +1,575 @@
+<!document html>
+<html>
+<head>
+    <title>타이틀입니다~</title>
+
+    <style>
+        
+        .daily {
+            position: relative;
+            height: :500px;
+            background-color: aquamarine;
+            font-size: 16px;
+            z-index: 1;
+        }
+         .daily2 {
+             position: absolute;
+             left: 0px;
+             top: 0px;
+            width: 100%;
+            height :100%;
+            background-color: wheat;
+            font-size: 16px;
+             z-index: 2;
+             opacity: 0.5;
+             pointer-events:  none;
+        }
+        .cel_header {
+            width: 100%;
+            height: calc(100% / 6);
+        }
+        .cel {
+            width: calc(100% / 7 - 1px);
+            border-left: 1px solid gray;
+            position: relative;
+            float: left;
+        }
+        
+        .cel_ch0 {
+            background-color: aqua;
+            left 0px;
+            width: calc(100% + 1px); /*1~2 필셀 차이 발생하여 부모보다 키웠다 */
+        }
+        
+        .cel_ch1 {
+            height: 20%;
+            font-size: 1em;
+            background-color: beige;
+            text-align: center;
+            color: darkslategrey;
+        }
+        
+        .cel_ch2 {
+            height: 80%;
+            background-color: antiquewhite;
+        }
+        .earthworm {
+            position: absolute;
+/*            top: 0px;*/
+/*            margin: 2px 0px 0px 0px;*/
+/*            height: 20px;*/
+            background-color: hotpink;
+            border: 0px solid #7f7f7f;
+            border-spacing: 5px;
+            border-collapse: separate;
+            box-shadow: 0px 2px 4px 0px #bbbbbb;
+            border-radius: 5px;
+            z-index: 10;
+            pointer-events:  none;
+        left: 0px;
+       width: 0%;
+        display: block;
+       text-overflow: hidden;
+        white-space: nowrap;
+        word-wrap: break-word;
+        overflow:hidden;  
+        }
+/*
+        
+   a {
+        position: absolute;
+        left: 0px;
+       width: 100%;
+        display: block;
+       text-overflow: hidden;
+        white-space: nowrap;
+        word-wrap: break-word;
+        overflow:hidden;  
+    }
+        
+*/
+        #calendar_body {
+/*            position: absolute; */
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+    
+    
+    </head>
+
+
+<body id="calendar_body">
+    <a id="idOver"> Over : 
+    </a><br>
+    <a id="idOverMin"> OverMin : 
+    </a>    
+    <br>
+    <a id="idDown"> Down : 
+    </a>
+    <br>
+    <a id="idDownMin"> DOwnMin : 
+    </a>
+    <br>
+    <a id="idIf"> 조건문 : 
+    </a>
+    <br>
+<div id="daily_body" class="daily">
+ <div class="cel_header">
+    <a id='earthworm_0' class="earthworm" style="z-index:10; top:calc(100% / 30); width:100%; background-color: aquamarine">버튼입니다123123</a>
+    <div id="daily_1"  class="cel" cnt='0' >
+        <div class="cel_ch0">
+    <div class="cel_ch1">1</div>
+    <div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_2"  class="cel" cnt='1' >
+        <div class="cel_ch0">
+	<div class="cel_ch1">2</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_3"  class="cel" cnt='2' >
+        <div class="cel_ch0">
+	<div class="cel_ch1">3</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_4"  class="cel" cnt='3' >
+	<div class="cel_ch0">
+        <div class="cel_ch1">4</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_5" class="cel" cnt='4'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">5</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_6" class="cel" cnt='5'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">6</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+      <div id="daily_11" class="cel" cnt='6'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">7</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+</div>
+     <div class="cel_header">
+         <a id='earthworm_1' class="earthworm" style="z-index:10; top:calc( 100% / 30 * 6 ); background-color: aquamarine">버튼입니다12316666623</a>
+         <div id="daily_6"  class="cel" cnt='7' >
+            <div class="cel_ch0">
+                <div class="cel_ch1">1</div>
+                <div class="cel_ch2">몸통</div>
+            </div>
+	     </div>
+        <div id="daily_7"  class="cel" cnt='8' >
+            <div class="cel_ch0">
+                <div class="cel_ch1">2</div>
+                <div class="cel_ch2">몸통</div>
+            </div>
+        </div>
+    <div id="daily_8"  class="cel" cnt='9' >
+        <div class="cel_ch0">
+	<div class="cel_ch1">3</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_9"  class="cel" cnt='10' >
+	<div class="cel_ch0">
+        <div class="cel_ch1">4</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_10" class="cel" cnt='11'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">5</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_11" class="cel" cnt='12'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">6</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+      <div id="daily_11" class="cel" cnt='13'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">7</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+</div>
+     <div class="cel_header">
+         <a id='earthworm_2' class="earthworm" style="z-index:10; top:calc( 100% / 30 * 11 ); background-color: aquamarine;">버튼입니다123123</a>
+    <div id="daily_6"  class="cel" cnt='14' >
+        <div class="cel_ch0">
+    <div class="cel_ch1">1</div>
+    <div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_7"  class="cel" cnt='15' >
+        <div class="cel_ch0">
+	<div class="cel_ch1">2</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_8"  class="cel" cnt='16' >
+        <div class="cel_ch0">
+	<div class="cel_ch1">3</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_9"  class="cel" cnt='17' >
+	<div class="cel_ch0">
+        <div class="cel_ch1">4</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_10" class="cel" cnt='18'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">5</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_11" class="cel" cnt='19'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">6</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+      <div id="daily_11" class="cel" cnt='20'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">7</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+</div>
+     <div class="cel_header">
+          <a id='earthworm_3' class="earthworm" style="z-index:10; top:calc( 100% / 30 * 16 ); background-color: aquamarine">버튼입니다123123</a>
+    <div id="daily_6"  class="cel" cnt='21' >
+        <div class="cel_ch0">
+    <div class="cel_ch1">1</div>
+    <div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_7"  class="cel" cnt='22' >
+        <div class="cel_ch0">
+	<div class="cel_ch1">2</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_8"  class="cel" cnt='23' >
+        <div class="cel_ch0">
+	<div class="cel_ch1">3</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_9"  class="cel" cnt='24' >
+	<div class="cel_ch0">
+        <div class="cel_ch1">4</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_10" class="cel" cnt='25'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">5</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_11" class="cel" cnt='26'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">6</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+      <div id="daily_11" class="cel" cnt='27'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">7</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+</div>
+     <div class="cel_header">
+          <a id='earthworm_4' class="earthworm" style="z-index:10; top:calc( 100% / 30 * 21 ); background-color: aquamarine">버튼입니다123123</a>
+    <div id="daily_6"  class="cel" cnt='28' >
+        <div class="cel_ch0">
+    <div class="cel_ch1">1</div>
+    <div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_7"  class="cel" cnt='29' >
+        <div class="cel_ch0">
+	<div class="cel_ch1">2</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_8"  class="cel" cnt='30' >
+        <div class="cel_ch0">
+	<div class="cel_ch1">3</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_9"  class="cel" cnt='31' >
+	<div class="cel_ch0">
+        <div class="cel_ch1">4</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_10" class="cel" cnt='32'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">5</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_11" class="cel" cnt='33'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">6</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+      <div id="daily_11" class="cel" cnt='34'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">7</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+</div>
+     <div class="cel_header">
+          <a id='earthworm_5' class="earthworm" style="z-index:10; top:calc( 100% / 30 * 26 ); background-color: aquamarine">버튼입니다123123</a>
+    <div id="daily_6"  class="cel" cnt='35' >
+        <div class="cel_ch0">
+    <div class="cel_ch1">1</div>
+    <div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_7"  class="cel" cnt='36' >
+        <div class="cel_ch0">
+	<div class="cel_ch1">2</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_8"  class="cel" cnt='37' >
+        <div class="cel_ch0">
+	<div class="cel_ch1">3</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    <div id="daily_9"  class="cel" cnt='38' >
+	<div class="cel_ch0">
+        <div class="cel_ch1">4</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    
+    <div id="daily_10" class="cel" cnt='39'>
+        <div class="cel_ch0">
+            <div class="cel_ch1">5</div>
+            <div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+    
+    <div id="daily_11" class="cel" cnt='40'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">6</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+      <div id="daily_11" class="cel" cnt='41'>
+	<div class="cel_ch0">
+        <div class="cel_ch1">7</div>
+	<div class="cel_ch2">몸통</div>
+        </div>
+	</div>
+</div>
+    
+<script type="text/javascript" src="/jquery_3.3.1/jquery.min.js"></script>
+<script>
+    
+    var g_down = 0;
+    
+    window.onmousedown = function(e)
+    {
+        e = e || window.event;
+        e.preventDefault();
+        
+        // cell 에서 이벤트발생하거나
+        
+        // 지렁이 마디에서 이벤트 발생하거나 
+        
+        switch(e.target.getAttribute("class")){
+            case "cel": // 달력 마우스 클릭시 
+               /// e.target.getAttribute("cnt")
+            case "cel_ch0":
+                // alert(e.target.parentElement.getAttribute("cnt"));
+            case "cel_ch1":
+                g_down = e.target.parentElement.parentElement.getAttribute("cnt");
+                earthwormDown(e);
+                break;
+            case "cel_ch2":
+                g_down = e.target.parentElement.parentElement.getAttribute("cnt");
+                earthwormDown(e);
+                break;
+            default:
+                break;
+        }
+    }
+    
+    var g_tag = null;
+    var g_width = 0;
+    
+    // 달력 마우스 클릭시
+    function earthwormDown(e)
+    {   
+        e = e || window.event;
+        e.preventDefault();
+
+        var a_over = e.target.parentElement.parentElement.getAttribute("cnt");
+        var nWidth = e.target.parentElement.parentElement.clientWidth;
+        g_width = nWidth;
+        
+        for(var i=0; i<6; i++){
+            var obj = document.getElementById("earthworm_" + i); 
+            
+            if( i == parseInt(a_over/7, 10) ){
+                obj.style.left = (parseInt(a_over, 10)%7*nWidth) + "px";
+                obj.style.width = nWidth + "px";
+               }
+            else{
+                obj.style.left = "0px";
+                obj.style.width = "0px";
+            }
+        }
+        document.onmouseup = earthwormUp;
+        document.onmouseover = earthwormOver;
+    }
+    
+    function earthwormOver(e)
+    {   
+        var a_over = e.target.parentElement.parentElement.getAttribute("cnt");  
+        if(e.target.getAttribute("class") == "cel_ch1" || e.target.getAttribute("class") == "cel_ch2"){
+             drawEarthworm(g_down, a_over);   
+        }
+    } 
+    
+    function earthwormUp(e)
+    {
+        document.onmouseup = null;
+        document.onmouseover = null;
+    }
+    
+    // 층별로 계산하자
+    function drawEarthworm(dayDown, dayOver)
+    {
+        var nDown = parseInt(dayDown/7, 10);
+        var nOver = parseInt(dayOver/7, 10);
+        var nDownMin =  parseInt(dayDown%7, 10);
+        var nOverMin =  parseInt(dayOver%7, 10);
+        document.getElementById("idDown").innerHTML = "Down : " + nDown;
+        document.getElementById("idDownMin").innerHTML = "DownMin : " + nDownMin;
+        document.getElementById("idOver").innerHTML = "Over : " + nOver;
+        document.getElementById("idOverMin").innerHTML = "OverMin : " + nOverMin;  
+        
+        
+        if(nDown > nOver){ // 다운이 오버보다 날짜가 클 때
+            document.getElementById("idIf").innerHTML = "조건문 : if(dayDown > dayOver)";
+            
+            for(var i=0; i<7; i++){
+                var obj = document.getElementById("earthworm_" + (i) );
+                
+                 if(i == nDown){ // 시작점 계산
+                     obj.style.left =  "0px";
+                    obj.style.width = (g_width * (nDownMin + 1) ) + "px";
+                 }
+                else if(i == nOver){ // 현재 마우스 위치까지 계산
+                    obj.style.left = (g_width * (nOverMin)) +"px";
+                    obj.style.width = (g_width * (7- nOverMin) ) + "px";
+                }
+                else if(i < nDown && i > nOver) { // 범위 안에 해당된다
+                    obj.style.left = "0px";
+                    obj.style.width = g_width*7 + "px";
+                }
+                else { // 범위에 해당되지 않는다
+                    obj.style.left = "0px";
+                    obj.style.width = "0px";
+                }
+            }            
+        }        
+        else if(nDown < nOver){
+            document.getElementById("idIf").innerHTML = "조건문 : else if(dayDown < dayOver)";
+            for(var i=0; i<7; i++){
+                var obj = document.getElementById("earthworm_" + (i) );
+                
+                 if(i == nDown){ // 시작점 계산
+                     obj.style.left = (g_width * (nDownMin)) + "px";
+                    obj.style.width = (g_width * (7-nDownMin) ) + "px";
+                 }
+                else if(i == nOver){ // 현재 마우스 위치까지 계산
+                    obj.style.left = "0px";
+                    obj.style.width = (g_width * (nOverMin +1)) + "px";
+                }
+                else if(i > nDown && i < nOver) { // 범위 안에 해당된다
+                    obj.style.left = "0px";
+                    obj.style.width = g_width*7 + "px";
+                }
+                else { // 범위에 해당되지 않는다
+                    obj.style.left = "0px";
+                    obj.style.width = "0px";
+                }
+            }
+            
+        }
+        
+        else if(nDown == nOver){
+            document.getElementById("idIf").innerHTML = "조건문 : else if(dayDown == dayOver)";
+            
+            for(var i=0; i<7; i++){
+                var obj = document.getElementById("earthworm_" + (i) );
+                
+                 if(i == nDown){ // 시작점 계산
+                    
+                     if(nDownMin > nOverMin){ // 시작점이 더 큰경우
+                         obj.style.left = (g_width * (nOverMin) ) + "px";
+                    obj.style.width = (nDownMin - nOverMin + 1)*g_width + "px";
+                     }
+                     else if(nDownMin < nOverMin){ // 시작점이 작은경우
+                         obj.style.left = (g_width * (nDownMin)  ) + "px";
+                    obj.style.width = (nOverMin -nDownMin +1)*g_width + "px";
+                     }
+                     else if(nDownMin == nOverMin){ // 같은경운 기본값
+                     
+                         obj.style.left = (g_width * nDownMin) + "px";
+                    obj.style.width = g_width + "px";
+                     }
+                     else{ // 이상한 값이다
+                        return;    
+                     }
+                     
+                 }
+                else { // 범위에 해당되지 않는다
+                    obj.style.left = "0px";
+                    obj.style.width = "0px";
+                }
+            }
+        }
+        else {
+            document.getElementById("idIf").innerHTML = "조건문 : else";
+            // 이상한 값 들어온거
+            return;
+        }
+ 
+    }
+    
+    
+</script>    
+    
+    
+</div>
+</body>
+
+</html>
