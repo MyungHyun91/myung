@@ -85,7 +85,7 @@
         #middle_child {
             position: absolute;
             top: 100px;
-            left: 100px;
+            left: 0px;
             width:100%;
             height: 100%;
         }
@@ -115,7 +115,7 @@
     <script>
     
          $(document).ready(function(){
-               alert("???");
+        
             $('.menu_bar').mouseover(function(event){
                 $('#highlight_bar').stop().animate({
                    left: event.target.offsetLeft,
