@@ -2,20 +2,24 @@
 <html>
 <head>
     <title>Pollock hompi^^</title>
-    <link rel="stylesheet" href="myung_calendar.css">
+    <link rel="stylesheet" href="/hompi/calendar/myung_calendar.css">
 </head>
 <body>
     
+    <div  style="position: absolute; left: 50%; transform: translate(-50%, 0%)" >
+<span id="btnPrev" class="btn_dtp">&nbsp<<&nbsp</span>
+<text id="txtCalendar" ></text>
+<span id="btnNext" class="btn_dtp">&nbsp>>&nbsp</span>
+</div>
     <div id="o1">
-
+    
     </div>
     <script src="/hompi/jquery_3.3.1/jquery.min.js"></script>
-    <script src="./myung_calendar.js"></script>
+    <script src="/hompi/calendar/myung_calendar.js"></script>
     
     <script>
     $(document).ready(function() { 
         init();
-    
     });
     
     var g_down = 0;

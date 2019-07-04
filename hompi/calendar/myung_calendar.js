@@ -26,8 +26,6 @@ var WEEK_TEXT = ["일", "월", "화", "수", "목", "금", "토"];
  *****************************************************/
 
 
-
-
 /*****************************************************
  * 일반함수 선언부
  *****************************************************/
@@ -55,8 +53,15 @@ function init()
 {
     // 1. 태그 생성
     createFrame();
+    setDate();
     
 }
+
+function setDate()
+{
+    $("#txtCalendar").text(getYYYYMMDD()); // 현재날짜 셋팅
+}
+
 
 /*
  css 파일은 있고
@@ -111,4 +116,27 @@ function createFrame()
         
         
     }   
+}
+
+/**
+ * @author 김명현
+ * @tel 01033224495
+ * @param YYYYMMDD 날짜 문자열
+ * @return YYYY-MM-DD 날짜 문자열
+  (파라미터가 없으면 오늘날 기준)날짜를 YYYY-MM-DD 형식으로 포맷하여 반환
+ */
+function getYYYYMMDD(strDate)
+{
+    var d = null;
+    if(strDate == undefined || strDate == null || isNaN(strDate)){
+        d = new Date();
+    }else{
+        d = new Date(strDate);
+    }
+    var year = d.getFullYear(); 
+    var month = '' + (d.getMonth() + 1);
+    var day = '' + d.getDate();
+    if (month.length < 2) month = '0' + month; 
+    if (day.length < 2) day = '0' + day;
+    return [year, month, day].join('-');
 }

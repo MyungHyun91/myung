@@ -1,8 +1,13 @@
-   #o1 {
+
+    .btn_dtp {
+        background-color: lightblue;    
+        border-radius: 5px;
+    }
+#o1 {
             position: relative;
             width:100%;
             height: 100%;
-            top:0px;
+            top:50px;
         }
         .calendar_row{
           position: relative;
