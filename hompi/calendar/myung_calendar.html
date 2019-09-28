@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pollock hompi^^</title>
+    <title>Pollock Soft^^!</title>
     <link rel="stylesheet" href="/hompi/calendar/myung_calendar.css">
 </head>
 <body>
+
+<div id="mydiv">
+    <div id="mydivheader">일정보기</div>
+    
+    <p id="daily_id"></p>
+    <p id="pDailyDate"></p>
+    <textarea id="daily_textarea">텍스트를 입력하세요.</textarea>
+        <br>
+    <button id="daily_upadte">수정</button><button id="btnDailyInsert">저장</button><button id="btnDailyDelete">삭제</button>
+</div>
     
     <div  style="position: absolute; left: 50%; transform: translate(-50%, 0%)" >
 <span id="btnPrev" class="btn_dtp">&nbsp<<&nbsp</span>
@@ -12,7 +22,6 @@
 <span id="btnNext" class="btn_dtp">&nbsp>>&nbsp</span>
 </div>
     <div id="o1">
-    수정됨?
     </div>
     <script src="/hompi/jquery_3.3.1/jquery.min.js"></script>
     <script src="/hompi/calendar/myung_calendar.js"></script>
@@ -21,171 +30,6 @@
     $(document).ready(function() { 
         init();
     });
-    
-    var g_down = 0;
-    
-    window.onmousedown = function(e)
-    {
-        e = e || window.event;
-        e.preventDefault();
-        
-        // cell 에서 이벤트발생하거나
-        
-        // 지렁이 마디에서 이벤트 발생하거나 
-        
-        switch(e.target.getAttribute("class")){
-            case "d1": // 달력 마우스 클릭시                
-            case "d2":
-            case "d3":
-                g_down = e.target.getAttribute("cnt");
-                
-                earthwormDown(e);
-                break;            
-            default:
-                break;
-        }
-    }
-    
-    var g_tag = null;
-    var g_width = 0;
-    
-    // 달력 마우스 클릭시
-    function earthwormDown(e)
-    {   
-        e = e || window.event;
-        e.preventDefault();
-
-        var a_over = e.target.getAttribute("cnt");
-        var nWidth = 100/7;
-        g_width = nWidth;
-        
-        for(var i=0; i<6; i++){
-            var obj = document.getElementById("btn" + i); 
-            
-            if( i == parseInt(a_over/7, 10) ){
-                obj.style.left = (parseInt(a_over, 10)%7*nWidth) + "%";
-                obj.style.width = nWidth + "%";
-               }
-            else{
-                obj.style.left = "0px";
-                obj.style.width = "0px";
-            }
-        }
-        document.onmouseup = earthwormUp;
-        document.onmouseover = earthwormOver;
-    }
-    
-    function earthwormOver(e)
-    {   
-        var a_over = e.target.getAttribute("cnt");  
-        if(e.target.getAttribute("class") == "d1" || e.target.getAttribute("class") == "d2"){
-             drawEarthworm(g_down, a_over);   
-        }
-    } 
-    
-    function earthwormUp(e)
-    {
-        document.onmouseup = null;
-        document.onmouseover = null;
-    }
-    
-    // 층별로 계산하자
-    function drawEarthworm(dayDown, dayOver)
-    {
-        var nDown = parseInt(dayDown/7, 10);
-        var nOver = parseInt(dayOver/7, 10);
-        var nDownMin =  parseInt(dayDown%7, 10);
-        var nOverMin =  parseInt(dayOver%7, 10);
-        
-        var nPercent = 100/7;
-        
-        if(nDown > nOver){ // 다운이 오버보다 날짜가 클 때
-            
-            for(var i=0; i<6; i++){
-                var obj = document.getElementById("btn" + (i) );
-                
-                 if(i == nDown){ // 시작점 계산
-                    obj.style.left =  "0%";
-                    obj.style.width = (nDownMin + 1) * nPercent  + "%";
-                 }
-                else if(i == nOver){ // 현재 마우스 위치까지 계산
-                    obj.style.left = (nOverMin) * nPercent + "%";
-                    obj.style.width = (7- nOverMin) * nPercent + "%";
-                }
-                else if(i < nDown && i > nOver) { // 범위 안에 해당된다
-                    obj.style.left = "0%";
-                    obj.style.width = "100%";
-                }
-                else { // 범위에 해당되지 않는다
-                    obj.style.left = "0%";
-                    obj.style.width = "0%";
-                }
-            }            
-        }        
-        else if(nDown < nOver){
-            
-            for(var i=0; i<6; i++){
-                var obj = document.getElementById("btn" + (i) );
-                
-                if(i == nDown){ // 시작점 계산
-                    obj.style.left = (nDownMin) * nPercent + "%";
-                    obj.style.width = (7-nDownMin) * nPercent + "%";
-                }
-                else if(i == nOver){ // 현재 마우스 위치까지 계산
-                    obj.style.left = "0%";
-                    obj.style.width = (nOverMin +1) * nPercent + "%";
-                }
-                else if(i > nDown && i < nOver) { // 범위 안에 해당된다
-                    obj.style.left = "0%";
-                    obj.style.width = (7) * nPercent + "%";
-                }
-                else { // 범위에 해당되지 않는다
-                    obj.style.left = "0%";
-                    obj.style.width = "0%";
-                }
-            }
-            
-        }
-        
-        else if(nDown == nOver){
-            
-            for(var i=0; i<6; i++){
-                var obj = document.getElementById("btn" + (i) );
-                
-                 if(i == nDown){ // 시작점 계산
-                    
-                     if(nDownMin > nOverMin){ // 시작점이 더 큰경우
-                         obj.style.left = (nOverMin) * nPercent + "%";
-                    obj.style.width = (nDownMin - nOverMin + 1)*nPercent + "%";
-                     }
-                     else if(nDownMin < nOverMin){ // 시작점이 작은경우
-                         obj.style.left = (nDownMin) * nPercent + "%";
-                    obj.style.width = (nOverMin -nDownMin +1)* nPercent + "%";
-                     }
-                     else if(nDownMin == nOverMin){ // 같은경운 기본값
-                     
-                         obj.style.left = (nDownMin) * nPercent + "%";
-                    obj.style.width = nPercent + "%";
-                     }
-                     else{ // 이상한 값이다
-                        return;    
-                     }
-                     
-                 }
-                else { // 범위에 해당되지 않는다
-                    obj.style.left = "0%";
-                    obj.style.width = "0%";
-                }
-            }
-        }
-        else {
-            // 이상한 값 들어온거
-            return;
-        }
- 
-    }
-    
-    
         
     </script>
     

@@ -1,6 +1,35 @@
 
+   #mydiv {
+        display: block; 
+      position: absolute;
+      z-index: 100;
+      width:200px;
+       height: 200px;
+       top:0px;
+       left:0px;
+      background-color: #ffffff;
+      text-align: center;
+      border: 0px solid #d3d3d3;
+                     border-spacing: 5px;
+            border-collapse: separate;
+            box-shadow: 0px 2px 4px 0px #bbbbbb;
+        border-radius: 5px;
+       
+    }
+
+    #mydivheader {
+        padding: 5px;
+        cursor: move;
+        z-index: 10;  
+        background-color: #ffffff;
+        color: #fff;
+        border-spacing: 5px;
+        border-collapse: separate;
+        box-shadow: 0px 2px 4px 0px #bbbbbb;
+    }
+
     .btn_dtp {
-        background-color: hotpink;    
+        background-color: lightblue;    
         border-radius: 5px;
     }
 #o1 {

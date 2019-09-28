@@ -1,0 +1,52 @@
+body {
+    
+    background-color: #ffff00;
+}
+
+#frame_panel {
+    background-color: rgb(002,170,178);
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: 100%;
+    height: 100%;
+}
+
+#frame_top {
+    position: fixed;
+    height: 0px;
+    top: 0px;
+    background-image: url('http://localhost:3000/image/login_tile01.jpg');
+}
+
+#frame_middle {
+    background-color: rgb(255,255,255);
+    position: relative;
+    top:300px;
+    width: 100%;
+    height: 1500px;
+    z-index: 10;
+    /*background-image: url('http://localhost:3000/image/login_tile01.jpg');*/
+}
+
+/* css */
+.show-on-scroll { visibility: hidden; top:100px; position: fixed; left:0px; width: 500px; background-color: blueviolet; }
+.show-on-scroll.shown { visibility: visible; }
+
+div{
+background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 44%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 56%, rgba(255, 255, 255, 0) 100%);
+background-size: 4px 4px;
+background-repeat: repeat;
+}
+
+ul{
+     margin: 0 auto;
+    list-style: none;
+}
+
+li{
+    float:left;
+    margin-right: 100px;
+}
+
+li a{font-size:1.1em;color:white;font-weight: normal;text-decoration: none;}
